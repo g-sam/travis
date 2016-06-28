@@ -31,11 +31,3 @@ tape('test GET request to "/public/script.js" endpoint', (t) =>{
 	})
 })
 
-tape('test GET request to "/public/script.js" endpoint', (t) =>{
-	shot.inject(handler, {method: 'get', url: '/public/script.js'}, (res) => {
-		t.equal(res.statusCode, 200, 'has status 200')
-		t.ok(res.payload.includes('function'), 'finds script.js file')
-		t.equal(res.headers['Content-type'], 'text/js', 'is type js')
-		t.end()
-	})
-})
