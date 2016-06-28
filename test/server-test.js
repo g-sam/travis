@@ -19,6 +19,7 @@ tape('test GET request to "/" endpoint', (t) =>{
 tape('test GET request on non-existent endpoint', (t) => {
 	shot.inject(handler, {method: 'get', url: '/does-not-exist'}, (res)=>{
 		t.equal(res.statusCode, 404, 'has status 404')
+		t.end()
 	})
 })
  
